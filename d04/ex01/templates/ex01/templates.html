@@ -1,0 +1,13 @@
+{% extends 'ex01/base.html' %}
+
+{% block title%}
+Templates
+{% endblock %}
+
+{% block content%}
+Django utilise un moteur de template Jinja 2 qui va d'abord traiter les variables et les bouts de code. 
+Une fois transforme en un fichier statique il le retrensmet a la vue
+Le moteur de template permet d'etendre ou d'inserer des blocs de code. Ceci permet
+de ne pas avoir a reecriere le code en permanence &#123;%block%} &#123;%endblock%}
+Les boucles &#123;%for %} &#123;% endfor %} permettent de creer facilement un tableau ac des donnees envoyees de la views de tailles variables&#123;%if %} &#123;%endif%}
+{% endblock %}

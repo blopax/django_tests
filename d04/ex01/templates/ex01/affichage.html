@@ -1,0 +1,12 @@
+{% extends 'ex01/base.html' %}
+
+{% block title%}
+Affichage
+{% endblock %}
+
+{% block content%}
+L'usager fait une requete. Cette requete passe par le serveur qui renvoie directement les static file ou passe par 
+le WSGI pour transformer la requete en objet python (HttpRequest). LA requete est trqitee par l'UrlConf
+qui redirige vers la vue appropriee. La vue traite la requete en faisant appel si necessaire a la BDD pour recuperer des donnees adequates
+et fait appel au template puis renvoie la requete
+{% endblock %}
