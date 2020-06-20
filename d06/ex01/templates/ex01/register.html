@@ -1,0 +1,19 @@
+{% extends 'ex01/base.html' %}
+
+
+{% block content %}
+<p>Register</p>
+{% if success is True %}
+    <p>User saved</p>
+
+{% elif success is False %}
+    <p>Couldn't register user </p>
+{% endif %}
+<form action="{% url 'ex01:ex01-register' %}", method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}

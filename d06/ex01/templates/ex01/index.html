@@ -1,0 +1,33 @@
+{% extends 'ex01/base.html' %}
+
+
+{% block content %}
+{% if logged_in %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endif %}
+
+
+    <table>
+        {% for tip in tips %}
+            <tr>
+                <form method="POST" action="change_tip_meta">
+                    {% csrf_token %}
+                    <input type="hidden" name='id' value='{{ tip.pk }}'>
+                    <td>{{ tip.auteur.username }}</td>
+                    <td>{{ tip.pk }}</td>
+                    <td>{{ tip.contenu }}</td>
+                    <td> {{tip.upvotes }}</td>
+                    <td> {{tip.downvotes }}</td>
+                    <td><input type="submit" name="action" value='Upvote'></td>
+                    <td><input type="submit" name="action" value='Downvote'></td>
+                    <td><input type="submit" name="action" value='Delete'></td>
+                </form>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

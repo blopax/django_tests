@@ -5,11 +5,44 @@
     "version": "0.2.0",
     "configurations": [
 
+
         {
-            "name": "Python : Django",
+            "name": "Python : Django d04",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/d04/manage.py",
+            "args": [
+                "runserver",
+                "--noreload"
+            ],
+            "django": true
+        },
+        {
+            "name": "Python : Django d05",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/d05/manage.py",
+            "args": [
+                "runserver",
+                "--noreload"
+            ],
+            "django": true
+        },
+        {
+            "name": "Python : Django d06",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/d06/manage.py",
+            "args": [
+                "runserver",
+            ],
+            "django": true
+        },
+        {
+            "name": "Python : Django dmysite",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/mysite/manage.py",
             "args": [
                 "runserver",
                 "--noreload"

@@ -1,0 +1,18 @@
+{% extends 'ex01/base.html' %}
+
+{% block content %}
+<p>Login</p>
+{% if success is True %}
+    <p>User logged in</p>
+{% elif success is False %}
+    <p>Couldn't login </p>
+{% endif %}
+
+<form action="{% url 'ex01:ex01-login' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
